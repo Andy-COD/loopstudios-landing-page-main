@@ -1,0 +1,197 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --White: hsl(0, 0%, 100%);
+  --Black: hsl(0, 0%, 0%);
+  --Dark-Gray: hsl(0, 0%, 55%);
+  --Very-Dark-Gray: hsl(0, 0%, 41%);
+}
+body,
+html {
+  overflow-x: hidden;
+}
+h1,
+h2,
+h3 {
+  font-family: "Josefin Sans", sans-serif;
+}
+p {
+  font-family: "Alata", sans-serif;
+}
+body {
+  width: 100%;
+  height: 100%;
+  font-size: 15px;
+}
+/* ====================== Header =================== */
+header {
+  width: 100vw;
+  background: url(../images/desktop/image-hero.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  margin-bottom: 12rem;
+}
+header nav {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 2rem;
+}
+nav img {
+  margin-left: 6.5%;
+}
+nav ul {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  list-style: none;
+  width: 37%;
+  margin-right: 5%;
+}
+nav ul li {
+  text-decoration: none;
+  gap: 5rem;
+  display: inline-block;
+  color: var(--White);
+  position: relative;
+}
+nav ul li::after {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 2px;
+  background-color: var(--White);
+  top: 1rem;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition-duration: .5s;
+}
+nav ul li:hover::after {
+  transform: scaleX(1);
+}
+nav ul li:hover {
+  cursor: pointer;
+}
+header > h1 {
+  width: 30rem;
+  height: 16rem;
+  margin-top: 8rem;
+  margin-left: 15%;
+  padding: 1rem;
+  border: 2px solid var(--White);
+  font-size: 4rem;
+  color: var(--White);
+}
+/* ==================== Main ======================= */
+/* -------- oculus ---------- */
+.oculus {
+  width: 85%;
+  height: 600px;
+  margin: auto;
+  position: relative;
+  margin-bottom: 7rem;
+  display: flex;
+}
+.image img {
+  flex: 1 0 100%;
+  display: block;
+  width: 100%;
+}
+.oculus-description {
+  width: 70%;
+  background-image: url(../images/desktop/image-interactive.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+.oculus-content {
+  padding: 2rem;
+  position: absolute;
+  content: '';
+  top: 67.5%;
+  left: 80%;
+  background-color: white;
+  width: 60%;
+}
+.oculus-description h2 {
+  font-size: 3rem;
+  padding-bottom: 1rem;
+}
+.oculus-description p {
+  color: var(--Dark-Gray);
+}
+.exp {
+  width: 85%;
+  margin: auto;
+  margin-bottom: 2.5rem;
+}
+.exp-header {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 2rem;
+  text-transform: uppercase;
+  font-size: 2rem;
+  font-weight: lighter;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.exp-header button {
+  padding: 10px 3rem;
+  background-color: var(--White);
+  transition: all 0.5s ease;
+}
+.exp-header button:hover {
+  background-color: var(--Black);
+  color: var(--White);
+  cursor: pointer;
+}
+.exp-images {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 1rem;
+}
+.exp-images > div {
+  position: relative;
+  transition: 0.5s ease;
+}
+.exp-images > div img {
+  width: 100%;
+  background-size: contain;
+  transition: 0.5s ease;
+}
+.text {
+  position: absolute;
+  content: "";
+  top: 80%;
+  left: 10%;
+  font-size: large;
+  color: var(--White);
+  font-weight: lighter;
+}
+.exp-images > div img:hover {
+  opacity: 0.3;
+}
+.exp-images > div img:hover .text h2 {
+  color: black;
+}
+footer {
+  background-color: var(--Black);
+}
+footer section {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  color: var(--White);
+}
+pen
