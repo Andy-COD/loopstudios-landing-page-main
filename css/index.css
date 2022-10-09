@@ -17,24 +17,33 @@ h1,
 h2,
 h3 {
   font-family: "Josefin Sans", sans-serif;
+  font-weight: 100;
 }
 p {
   font-family: "Alata", sans-serif;
+  color: var(--Very-Dark-Gray);
 }
 body {
   width: 100%;
   height: 100%;
   font-size: 15px;
+  overflow: hidden;
 }
 /* ====================== Header =================== */
 header {
-  width: 100vw;
+  width: 100%;
   background: url(../images/desktop/image-hero.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   height: 100vh;
   margin-bottom: 12rem;
+}
+nav {
+  width: 100%;
+}
+header img {
+  padding-left: 0;
 }
 header nav {
   width: 80%;
@@ -43,6 +52,12 @@ header nav {
   justify-content: space-between;
   align-items: center;
   padding-top: 2rem;
+}
+nav img:last-child {
+  display: none;
+}
+.side-nav {
+  display: none;
 }
 nav img {
   margin-left: 6.5%;
@@ -64,15 +79,15 @@ nav ul li {
 }
 nav ul li::after {
   position: absolute;
-  content: '';
-  width: 100%;
+  content: "";
+  width: 60%;
   height: 2px;
   background-color: var(--White);
-  top: 1rem;
-  left: 0;
+  top: 1.5rem;
+  left: 20%;
   transform: scaleX(0);
   transform-origin: center;
-  transition-duration: .5s;
+  transition-duration: 0.5s;
 }
 nav ul li:hover::after {
   transform: scaleX(1);
@@ -94,45 +109,47 @@ header > h1 {
 /* -------- oculus ---------- */
 .oculus {
   width: 85%;
-  height: 600px;
+  margin-bottom: 3rem;
   margin: auto;
-  position: relative;
-  margin-bottom: 7rem;
-  display: flex;
-}
-.image img {
-  flex: 1 0 100%;
-  display: block;
-  width: 100%;
 }
 .oculus-description {
-  width: 70%;
-  background-image: url(../images/desktop/image-interactive.jpg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   position: relative;
+  margin-bottom: 4rem;
+}
+.oculus-image img:first-child {
+  width: 80%;
+  background-size: contain;
+  background-position: center;
+  display: block;
 }
 .oculus-content {
-  padding: 2rem;
+  width: 50%;
   position: absolute;
-  content: '';
-  top: 67.5%;
-  left: 80%;
-  background-color: white;
-  width: 60%;
+  content: "";
+  right: 0;
+  bottom: 0;
+  background-color: var(--White);
+  padding: 1rem;
 }
-.oculus-description h2 {
-  font-size: 3rem;
-  padding-bottom: 1rem;
+.oculus-content h2 {
+  width: 50%;
+  margin: 2rem;
+  font-size: 2rem;
+  text-transform: uppercase;
 }
-.oculus-description p {
-  color: var(--Dark-Gray);
+.oculus-content p {
+  margin: 2rem;
+  text-align: start;
 }
+.oculus-image img:last-child {
+  display: none;
+}
+/* -------- Experience ------------ */
 .exp {
   width: 85%;
   margin: auto;
   margin-bottom: 2.5rem;
+  margin-top: 3rem;
 }
 .exp-header {
   display: flex;
@@ -164,6 +181,9 @@ header > h1 {
   position: relative;
   transition: 0.5s ease;
 }
+.container > img:nth-child(2) {
+  display: none;
+}
 .exp-images > div img {
   width: 100%;
   background-size: contain;
@@ -177,12 +197,21 @@ header > h1 {
   font-size: large;
   color: var(--White);
   font-weight: lighter;
+  text-transform: uppercase;
+  font-weight: 200;
 }
-.exp-images > div img:hover {
+.container:hover img {
   opacity: 0.3;
+  cursor: pointer;
+}
+.container:hover h2 {
+  color: var(--Black);
 }
 .exp-images > div img:hover .text h2 {
-  color: black;
+  color: var(--Black);
+}
+.btn {
+  display: none;
 }
 footer {
   background-color: var(--Black);
@@ -194,4 +223,253 @@ footer section {
   margin: auto;
   color: var(--White);
 }
-pen
+.left,
+.right {
+  margin-top: 3rem;
+}
+.left {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+.left img {
+  width: 50%;
+}
+.left ul {
+  display: flex;
+  column-gap: 1rem;
+  margin-bottom: 3rem;
+  list-style-type: none;
+}
+.left ul li {
+  position: relative;
+  width: max-content;
+}
+.left ul li:hover {
+  cursor: pointer;
+}
+.left ul li::after {
+  position: absolute;
+  content: "";
+  top: 1.3rem;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: var(--White);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition-duration: 0.7s;
+}
+.left ul li:hover::after {
+  transform: scaleX(1);
+}
+.icon {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  column-gap: 1rem;
+  margin-bottom: 1rem;
+  position: relative;
+}
+.icon div {
+  width: max-content;
+  position: relative;
+}
+.icon div:hover {
+  cursor: pointer;
+}
+.icon div::after {
+  position: absolute;
+  content: "";
+  top: 2rem;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: var(--White);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition-duration: 0.7s;
+}
+.icon div:hover::after {
+  transform: scaleX(1);
+}
+.right p {
+  width: 100%;
+  color: var(--Very-Dark-Gray);
+}
+
+@media (min-width: 375px) and (max-width: 767.98px) {
+  header {
+    background-image: url(../images/mobile/image-hero.jpg);
+  }
+  header h1 {
+    margin-left: 0;
+    margin: auto;
+    margin-top: 5rem;
+    width: 80%;
+    font-size: 3.5rem;
+  }
+  .side-nav {
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+    display: block;
+    background-color: var(--Black);
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 0;
+    color: var(--White);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition-duration: 700ms;
+  }
+  .side-nav img {
+    margin-top: 2rem;
+    padding-left: 1rem;
+    margin-bottom: 4rem;
+  }
+  .side-nav ul {
+    margin-top: 4rem;
+    margin-left: 1rem;
+    list-style-type: none;
+  }
+  .side-nav ul li {
+    width: max-content;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    position: relative;
+  }
+  .side-nav ul li::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 1px;
+    background-color: var(--White);
+    top: 2.7rem;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition-duration: 1s;
+  }
+  .side-nav ul li:hover {
+    cursor: pointer;
+  }
+  .side-nav ul li:hover::after {
+    transform: scaleX(1);
+  }
+  nav img:last-child {
+    display: block;
+    z-index: 2;
+  }
+  nav img:last-child:hover {
+    cursor: pointer;
+  }
+  nav {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: grid;
+  }
+  nav img {
+    margin: 0;
+    padding: 0;
+  }
+  nav ul {
+    display: none;
+  }
+  .oculus-description {
+    width: 100%;
+    background-size: contain;
+  }
+  .oculus-content {
+    width: 100%;
+    position: static;
+    overflow: hidden;
+  }
+  .oculus-content h2 {
+    font-size: 2.3rem;
+    width: 100%;
+    margin: 0;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-weight: 100;
+  }
+  .oculus-image img:first-child {
+    display: none;
+  }
+  .oculus-image img:last-child {
+    display: block;
+    background-repeat: no-repeat;
+    width: 100%;
+  }
+  .oculus-content p {
+    width: 100%;
+    text-align: center;
+    padding: 0;
+    margin: auto;
+  }
+  .exp-header button {
+    display: none;
+  }
+  .exp-header h2 {
+    width: 100%;
+    text-align: center;
+    font-weight: 100;
+    margin: 0px;
+  }
+  .exp-images {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(auto);
+  }
+  .container > img:nth-child(1) {
+    display: none;
+  }
+  .container > img:nth-child(2) {
+    display: block;
+  }
+  .text {
+    top: 50%;
+  }
+  .btn {
+    width: 100%;
+    text-align: center;
+    padding-top: 2rem;
+  }
+  .btn > button {
+    padding: 10px 3rem;
+    background-color: var(--White);
+    transition: all 0.5s ease;
+    text-transform: uppercase;
+    margin-left: auto;
+    letter-spacing: 3px;
+  }
+  .btn > button:hover {
+    background-color: var(--Black);
+    color: var(--White);
+  }
+  footer section {
+    flex-direction: column;
+  }
+  .left img {
+    margin: auto;
+  }
+  .left ul {
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+  }
+  .left ul li {
+    text-align: center;
+    font-size: 1.2rem;
+    padding-bottom: 1rem;
+  }
+  .icon {
+    justify-content: center;
+    column-gap: 2rem;
+  }
+  .right p {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+}

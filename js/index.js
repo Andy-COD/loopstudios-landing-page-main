@@ -1,16 +1,14 @@
-const parent = document.querySelectorAll(".container");
-const child = document.querySelectorAll(".text");
+const menu = document.getElementById("menu");
+const sideNav = document.querySelector(".side-nav");
 
-
-parent.forEach(item => {
-    item.addEventListener("mouseenter", (e) => {
-        const text = e.target.children;
-        text[1].style.color = "black";
-    });
-    item.addEventListener("mouseleave", (e) => {
-        const text = e.target.children;
-        setTimeout(() => {
-            text[1].style.color = "white";
-        }, 100);
-    });
-});
+menu.addEventListener("click", (() => {
+    if(!sideNav.classList.contains("show")) {
+        sideNav.classList.add("show");
+        menu.setAttribute('src', "../images/icon-close.svg")
+        sideNav.style.transform = "scaleX(1)"
+    }else {
+        sideNav.classList.remove("show")
+        menu.setAttribute('src', "../images/icon-hamburger.svg")
+        sideNav.style.transform = "scaleX(0)"
+    }
+}))
